@@ -11,6 +11,13 @@ html {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
+h2 {
+  color: var(--main);
+  text-decoration: underline;
+  font-weight: bold;
+  font-style: oblique;
+}
+
 #pokemon-container {
   text-align: center;
   color: var(--main)
