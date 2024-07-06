@@ -1,15 +1,16 @@
+:root {
+  --main: #FFBF00;
+}
+
 @font-face {
   font-family: fbf;
   src: "5by5.ttf"
 }
 
-html {
-  color: #FFBF00;
-  font-family: fbf;
-}
-
 #pokemon-container {
   text-align: center;
+  font-family: fbf;
+  color: var(--main)
 }
 
 #pokemon-container img {
@@ -24,6 +25,8 @@ html {
     border: 2px plum dotted;
     text-align: center;
     background-image: url("purplehex.png");
+    font-family: fbf;
+    color: var(--main)
 }
 
 .pokemon-name {
