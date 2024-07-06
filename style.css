@@ -11,6 +11,10 @@ html {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
+body {
+  background-color: purple;
+}
+
 h2 {
   color: var(--main);
   text-decoration: underline;
