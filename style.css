@@ -34,7 +34,8 @@ h2 {
     background-color: brown;
     text-align: center;
     background-image: url("purplehex.png");
-    color: var(--main)
+    color: var(--main);
+    text-align: center;
 }
 
 .pokemon-name {
