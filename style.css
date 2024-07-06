@@ -7,9 +7,12 @@
   src: "5by5.ttf"
 }
 
+html {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
 #pokemon-container {
   text-align: center;
-  font-family: fbf;
   color: var(--main)
 }
 
@@ -25,7 +28,6 @@
     border: 2px plum dotted;
     text-align: center;
     background-image: url("purplehex.png");
-    font-family: fbf;
     color: var(--main)
 }
 
@@ -33,7 +35,6 @@
     font-weight: bold;
     font-size: 20px;
     color: var(--main);
-    font-family: fbf;
 }
 
 .pokemon-image {
