@@ -32,7 +32,6 @@ h2 {
     width: 300px;
     height: 400px;
     background-color: brown;
-    border: 2px plum dotted;
     text-align: center;
     background-image: url("purplehex.png");
     color: var(--main)
