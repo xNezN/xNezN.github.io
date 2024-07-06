@@ -1,3 +1,13 @@
+@font-face {
+  font-family: fbf;
+  src: "5by5.ttf"
+}
+
+html {
+  color: #FFBF00;
+  font-family: fbf;
+}
+
 #pokemon-container {
   text-align: center;
 }
