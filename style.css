@@ -13,6 +13,7 @@ html {
 
 body {
   background-color: purple;
+  background-image: url("purplehex.png");
 }
 
 h2 {
@@ -38,7 +39,6 @@ h2 {
     background-color: brown;
     text-align: center;
     align-items: center;
-    background-image: url("purplehex.png");
     color: var(--main);
 }
 
