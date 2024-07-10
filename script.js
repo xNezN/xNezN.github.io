@@ -18,19 +18,19 @@ function displayPokemon(pokemon) {
     const pokemonName = document.createElement('h1');
     const pokemonImage = document.createElement('img');
 
-    const capitalize = str => str.name.charAt(0).toUpperCase() + str.name.slice(1);
+    const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
 
     const capitalizedName = pokemon.name.includes('-')
         ? pokemon.name
             .split('-')
-            .map(word = capitalize(word))
+            .map(word => capitalize(word))
             .join(' ')
         : (pokemon.name.split(' ').length > 1
             ? pokemon.name
                 .split(' ')
-                .map(word = capitalize(word))
+                .map(word => capitalize(word))
                 .join(' ')
-            : capitalize(pokemon.name)
+            : capitalize(pokemon.name));
         
     pokemonName.textContent = capitalizedName;
     pokemonName.classList.add('pokemon-name');
