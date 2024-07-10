@@ -13,25 +13,31 @@ async function fetchPokemonData() {
     displayPokemon(pokemon);
 }
 
+const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+const capitalizePokemonName = (name) => {
+    if (name.includes('-')) {
+        return name
+            .split('-')
+            .map(word => capitalize(word))
+            .join(' ');
+    } else if (name.split(' ').length > 1) {
+        return name
+            .split(' ')
+            .map(word => capitalize(word))
+            .join(' ');
+    } else {
+        return capitalize(name);
+    }
+};
+
 function displayPokemon(pokemon) {
     const pokemonContainer = document.getElementById('pokemon-container');
     const pokemonName = document.createElement('h1');
     const pokemonImage = document.createElement('img');
 
-    const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+    const capitalizedName = capitalizePokemonName(pokemon.name);
 
-    const capitalizedName = pokemon.name.includes('-')
-        ? pokemon.name
-            .split('-')
-            .map(word => capitalize(word))
-            .join(' ')
-        : (pokemon.name.split(' ').length > 1
-            ? pokemon.name
-                .split(' ')
-                .map(word => capitalize(word))
-                .join(' ')
-            : capitalize(pokemon.name));
-        
     pokemonName.textContent = capitalizedName;
     pokemonName.classList.add('pokemon-name');
 
@@ -39,12 +45,8 @@ function displayPokemon(pokemon) {
     pokemonImage.alt = pokemon.name;
     pokemonImage.classList.add('pokemon-image');
 
-    if (pokemonContainer.innerHTML.length > 0) {
-        pokemonContainer.innerHTML = '';
-    }
-    
-    pokemonContainer.appendChild(pokemonName);
-    pokemonContainer.appendChild(pokemonImage);
-}
+     pokemonContainer.innerHTML = '';
+     pokemonContainer.appendChild(pokemonName);
+     pokemonContainer.appendChild(pokemonImage);
 
 document.addEventListener('DOMContentLoaded', fetchPokemonData);
