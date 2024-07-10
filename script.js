@@ -13,24 +13,25 @@ async function fetchPokemonData() {
     displayPokemon(pokemon);
 }
 
-async function fetchPokemonData() {
-    const pokemonId = getRandomPokemonId();
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-    if (!response.ok) {
-        console.error("Failed to fetch Pokemon data:", +response.statusText)
-        return;
-    }
-    const pokemon = await response.json();
-    displayPokemon(pokemon);
-}
-
 function displayPokemon(pokemon) {
     const pokemonContainer = document.getElementById('pokemon-container');
     const pokemonName = document.createElement('h1');
     const pokemonImage = document.createElement('img');
 
-    const capitalizedName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    const capitalize = str => str.name.charAt(0).toUpperCase() + str.name.slice(1);
 
+    const capitalizedName = pokemon.name.includes('-')
+        ? pokemon.name
+            .split('-')
+            .map(word = capitalize(word))
+            .join(' ')
+        : (pokemon.name.split(' ').length > 1
+            ? pokemon.name
+                .split(' ')
+                .map(word = capitalize(word))
+                .join(' ')
+            : capitalize(pokemon.name)
+        
     pokemonName.textContent = capitalizedName;
     pokemonName.classList.add('pokemon-name');
 
