@@ -20,6 +20,23 @@ h2 {
   font-style: oblique;
 }
 
+footer {
+  text-align: center;
+  margin-top: 100px;
+  color: aquamarine;
+}
+
+footer a {
+  color: lime;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: green;
+  text-decoration: underline;
+  font-style: oblique;
+}
+
 #pokemon-container {
   text-align: center;
   color: var(--main)
